@@ -1,7 +1,6 @@
 package com.electroapp.electro_app.domain.entities;
 
 import java.util.HashSet;
-
 import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
@@ -23,7 +22,7 @@ import lombok.ToString;
 
 @Getter
 @Setter
-@EqualsAndHashCode(exclude = "regions") 
+@EqualsAndHashCode(exclude = {"regions"})
 @ToString(exclude = {"regions"})
 @Table(name = "countries")
 @Entity
@@ -32,11 +31,14 @@ public class Country {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+
     @Column(length = 50, nullable = false)
     private String name;
 
+
     @Embedded
-    audit audit = new audit();
+    Audit audit = new Audit();
+
 
     @OneToMany(mappedBy = "countryId", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JsonManagedReference

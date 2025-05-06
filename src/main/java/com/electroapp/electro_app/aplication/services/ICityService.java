@@ -1,0 +1,21 @@
+package com.electroapp.electro_app.aplication.services;
+
+import java.util.List;
+import java.util.Optional;
+
+import com.electroapp.electro_app.domain.entities.City;
+import com.electroapp.electro_app.domain.entities.Country;
+
+public interface ICityService {
+     List<Country> findAll();
+
+    Optional<City> findById(Long id);
+
+    Country save(Country country);
+
+    Optional<Country> update(Long id, Country country);
+
+    Optional<Country> delete(Long id);
+
+
+}
