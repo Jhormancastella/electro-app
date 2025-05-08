@@ -5,7 +5,7 @@ import java.util.Optional;
 
 import com.electroapp.electro_app.domain.entities.Country;
 
-public interface iCountryService {
+public interface ICountryService {
     List<Country> findAll();
 
     Optional<Country> findById(Long id);

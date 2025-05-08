@@ -4,18 +4,18 @@ import java.util.List;
 import java.util.Optional;
 
 import com.electroapp.electro_app.domain.entities.City;
-import com.electroapp.electro_app.domain.entities.Country;
+
 
 public interface ICityService {
-     List<Country> findAll();
+     List<City> findAll();
 
     Optional<City> findById(Long id);
 
-    Country save(Country country);
+    City save(City city);
 
-    Optional<Country> update(Long id, Country country);
+    Optional<City> update(Long id, City city);
 
-    Optional<Country> delete(Long id);
+    Optional<City> delete(Long id);
 
 
 }

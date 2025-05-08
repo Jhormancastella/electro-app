@@ -9,13 +9,12 @@ import org.springframework.stereotype.Service;
 
 import com.electroapp.electro_app.aplication.services.ICityService;
 import com.electroapp.electro_app.domain.entities.City;
-import com.electroapp.electro_app.domain.entities.Country;
 
 @Service
 public class CityImpl implements ICityService {
 
     @Override
-    public List<Country> findAll() {
+    public List<City> findAll() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'findAll'");
     }
@@ -27,21 +26,22 @@ public class CityImpl implements ICityService {
     }
 
     @Override
-    public Country save(Country country) {
+    public City save(City city) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'save'");
     }
 
     @Override
-    public Optional<Country> update(Long id, Country country) {
+    public Optional<City> update(Long id, City city) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'update'");
     }
 
     @Override
-    public Optional<Country> delete(Long id) {
+    public Optional<City> delete(Long id) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'delete'");
     }
 
-    }
+
+}

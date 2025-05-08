@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.electroapp.electro_app.aplication.services.iCountryService;
+import com.electroapp.electro_app.aplication.services.ICountryService;
 import com.electroapp.electro_app.domain.entities.Country;
 import org.springframework.web.bind.annotation.PutMapping;
 
@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 @RequestMapping("/api/countries") 
 public class CountryController {
     @Autowired
-    private iCountryService countryService;
+    private ICountryService countryService;
 
     @GetMapping
    public List<Country> List() {
@@ -43,6 +43,8 @@ public class CountryController {
     public ResponseEntity<?> create(@RequestBody Country country) {
         return ResponseEntity.status(HttpStatus.CREATED).body(countryService.save(country));
     }
+
+
     @PutMapping("/{id}")
     public ResponseEntity<?> update(@RequestBody Country country, @PathVariable Long id) {
         Optional<Country> countryOptional = countryService.update(id, country);
@@ -52,6 +54,7 @@ public class CountryController {
             return ResponseEntity.notFound().build();
         }
 
+        
     @DeleteMapping("/{id}")
     public ResponseEntity<?> delete(@PathVariable Long id) {
         Optional<Country> countryOptional = countryService.delete(id);
