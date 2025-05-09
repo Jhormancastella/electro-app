@@ -55,7 +55,7 @@ public class CountryImpl implements ICountryService {
     }
     @Override
     public boolean ExistsByCountryname(String countryName) {
-       return countryRepository.existsByCountryName(countryName);
+       return countryRepository.exexistsByCountryname(countryName);
     }
 
 }
