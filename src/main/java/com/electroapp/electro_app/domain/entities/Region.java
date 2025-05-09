@@ -1,6 +1,5 @@
 package com.electroapp.electro_app.domain.entities;
 
-
 import java.util.HashSet;
 import java.util.Set;
 
@@ -24,10 +23,10 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-@Getter
 @Setter
-@EqualsAndHashCode(exclude = "cities")
-@ToString(exclude = {"cities"}) 
+@Getter
+@EqualsAndHashCode(exclude = {"cities"})
+@ToString(exclude = {"cities"})
 @Entity
 @Table(name = "regions")
 public class Region {
@@ -35,19 +34,20 @@ public class Region {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 50, nullable = false)
+    @Column(length = 50, nullable = true)
     private String name;
-    
+
     @Embedded
     Audit audit = new Audit();
 
     @ManyToOne
     @JoinColumn(name = "country_id")
     @JsonBackReference
-    Country countryId;
+    Country contryId;
 
-    @OneToMany(mappedBy = "regionId",fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "regionId",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JsonManagedReference
     private Set<City> cities = new HashSet<>();
 
 }
+

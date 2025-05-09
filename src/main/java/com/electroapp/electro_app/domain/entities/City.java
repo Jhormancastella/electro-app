@@ -14,13 +14,11 @@ import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
-
-
-@Getter
 @Setter
+@Getter
 @Entity
 @Table(name = "cities")
-public class City {    
+public class City {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -29,7 +27,7 @@ public class City {
     private String name;
 
     @Embedded
-    Audit Audit = new Audit();
+    Audit audit = new Audit();
 
     @ManyToOne
     @JoinColumn(name = "region_id")
