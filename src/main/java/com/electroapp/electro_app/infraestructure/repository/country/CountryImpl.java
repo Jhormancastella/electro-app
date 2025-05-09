@@ -6,13 +6,14 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.electroapp.electro_app.aplication.services.ICityService;
 import com.electroapp.electro_app.aplication.services.ICountryService;
 import com.electroapp.electro_app.domain.entities.Country;
 
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-public class CountryImpl implements ICountryService {
+public class CountryImpl implements ICityService {
 
     @Autowired
     private CountryRepository countryRepository;
